@@ -1,9 +1,9 @@
 ---
 layout: post
-title: You're up and running!
+title: Hola Mundo!
 ---
 
-### No hemos encontrado
+### Hola Mundo
 
 
 Hola este es el primer post de este blog.
