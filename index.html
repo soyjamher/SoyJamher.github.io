@@ -11,18 +11,15 @@ layout: main
 </article>
 
 <div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+  <h2>Últimos posts <small>&nbsp;<a href="{{ site.baseurl }}/blog">Ver todos</a></small></h2>
+  <section>
+    <div class="one_half_col">
+      {% for post in site.posts limit:2%}
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title}} </a><br><small>{{ page.date | date_to_string }}</small></h3>
+        <p>{{ post.excerpt }}</p>
+        <p><a href="{{ site.baseurl }}{{ post.url }}">Seguir leyendo <span>></span></a></p>
+      {% endfor %}
+  </div>
+  </section>
 </div>
-
 {% include archive.html %}

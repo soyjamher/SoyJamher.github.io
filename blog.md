@@ -4,11 +4,13 @@ title: Sobre mi
 permalink: /blog/
 ---
 <div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-    	<ul class="post-list">
-    		<li>{{ post.title }}<small>{{ post.date | date: "%B %e, %Y" }}</small></li>
-    	</ul>
-    </article>
-  {% endfor %}
+<h1>Archivo</h1>
+<ul>
+{% for post in site.posts %}
+	<li>
+		<a href="{{ post.url }}">{{ post.title }}</a>({{ post.date | date_to_string }})
+		<br>{{ post.description }}
+	</li>
+{% endfor %}
+</ul>
 </div>
