@@ -14,5 +14,8 @@
 
     {% if page.title %}
     <meta property="og:title" content="{{ page.title }}" />
+    {% if site.tags != "" %}
+        {% include collecttags.html %}
+    {% endif %}
     <meta property="twitter:title" content="{{ page.title }}" />
     {% endif %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hola Mundo!
-tags: [web, jekyll]
+tags: web jekyll
 ---
 
 ### Hola Mundo
