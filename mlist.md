@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Suscríbete a nuestra lista de correo
+title: Suscríbete a la lista de correo
 permalink: /mlist/
 ---
 
-Cada semana enviaremos un correo - a menos que no haya habido nuevos posts en el blog.
+Recibe un correo semanal con las ultimas publicaciones - a menos que no haya habido nuevas publicaciones en el blog-.
 
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
