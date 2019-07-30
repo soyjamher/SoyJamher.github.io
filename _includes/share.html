@@ -1,11 +1,18 @@
-<section class="share">
-  <a class="share-link" href="" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-    Twitter
-  </a>
-  <a class="share-link" href="" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-    Facebook
-  </a>
-  <a class="share-link" href="" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530'); return false;">
-    Google+
-  </a> 
+<section class="share-buttons">
+	<a href="mailto:?Subject={{ page.title }}&amp;Body=Mira%20esto%20 {{ page.url | prepend: site.urlstatic }}">
+        <i class="svg-icon email"></i>
+    </a>
+	<a href="http://www.facebook.com/sharer.php?u={{ page.url | prepend: site.urlstatic }}" target="_blank">
+        <i class="svg-icon facebook"></i>
+    </a>
+	<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url | prepend: site.urlstatic }}" target="_blank"><i class="svg-icon linkedin"></i>
+    </a>
+    <a href="https://twitter.com/share?url={{ page.url | prepend: site.urlstatic }}&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+        <i class="svg-icon twitter"></i>
+    </a>
+	<a href="https://plus.google.com/share?url={{ page.url | prepend: site.urlstatic }}" target="_blank">
+        <i class="svg-icon googleplus"></i>
+    </a>
 </section>
+
+
