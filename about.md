@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: about
 title: Sobre mi
 permalink: /about/
 ---
-<img src="https://raw.githubusercontent.com/soyjamher/SoyJamher.github.io/master/images/foto.jpeg" />
+<img src="{{ site.baseurl }}/images/jamher.jpeg" />
 ### Quién soy
 Bienvenido soy Manuel Jamher, soy de Monterrey soy un apasionado de la programación, persistente, fiel creyente de la mejora continua
 

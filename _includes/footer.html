@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer left column one-half">
+      <section class="small-font">
+        © Manuel Jamher | Powered by <a href="https://github.com/jekyll/jekyll">jekyll</a> | Custom <a href="https://github.com/wild-flame/jekyll-simple">theme forked from Simple</a> by <a href="http://wildflame.me">wildflame</a>
+      </section>
+    </div>
+
+    <div class="footer right column one-half">
+      <section class="small-font">
+        {% if site.footer-links.github %}
+        {% include icon-github.html username=site.footer-links.github %}
+        {% endif %}
+        {% if site.footer-links.twitter %}
+        {% include icon-twitter.html username=site.footer-links.twitter %}
+        {% endif %}
+      </section>
+    </div>
+  </div>
+</footer>

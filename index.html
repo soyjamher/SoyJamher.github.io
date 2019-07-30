@@ -1,25 +1,67 @@
 ---
-layout: main
+layout: default
+title: Home
 ---
 <article class="page">
-	<div class="entry">
-		<h3 id="quién-soy">Hola, soy Manuel Jamher</h3>
-		<p>llevo algunos años en la industria de TI, Me gusta aprender y perfeccionar mis habilidades, pienso que si todos lo intentamos podemos lograr que la industria del software sea mejor.</p>
+    <div class="entry">
+        <h3 id="quién-soy">Hola, soy Manuel Jamher</h3>
+        <p>llevo algunos años en la industria de TI, Me gusta aprender y perfeccionar mis habilidades, pienso que si todos lo intentamos podemos lograr que la industria del software sea mejor.</p>
 
-		<p>Aquí podras encontrar contenido diverso del día a día de un desarrollador, mas concretamente cosas que me ocurren a mi, todo el contenido podras encontrarlo en GitHub y si te interesa podemos contactarnos por las redes sociales localizados en el pie de pagina.</p>
-	</div>
+        <p>Aquí podras encontrar contenido diverso de cualquier cosa que me llame la atención sobre ciencia de la computación y la ingeniería de software. Todo el codigo podras encontrarlo en GitHub y si te interesa podemos contactarnos por las redes sociales localizados en el pie de pagina.</p>
+    </div>
 </article>
+<div class="home">
+  <h2>Últimos posts <small>&nbsp;<a href="{{ "/archivo" | prepend: site.baseurl }}">Ver todos</a></small></h2>
+  <div class="post-list">
+    {% for post in site.posts limit:3%}
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          {% if post.description %}
+            {{ post.description}}
+          {% else %}
+            {{ post.excerpt }}
+          {% endif %} 
+          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+        {% include archive.html %}
+        <!--
+        {% if post.location %}
+        <span class="author-location">
+          <div data-icon="ei-location"></div>
+          <a href=https://www.google.com/maps/place/{{post.location}}">{{ post.location }}</a>
+        </span>
+        {% endif %}
+        {% for category in post.categories %}
+        <a href="{{"/category/" | append: category | prepend: site.baseurl }}">
+          <data data-icon="ei-archive"></data>
+          {{category}}</a>
+        {% endfor %}
+        -->
 
-<div class="posts">
-  <h2>Últimos posts <small>&nbsp;<a href="{{ site.baseurl }}/blog">Ver todos</a></small></h2>
-  <section>
-    <div class="one_half_col">
-      {% for post in site.posts limit:2%}
-        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title}} </a><br><small>{{ page.date | date_to_string }}</small></h3>
-        <p>{{ post.excerpt }}</p>
-        <p><a href="{{ site.baseurl }}{{ post.url }}">Seguir leyendo <span>></span></a></p>
-      {% endfor %}
+        <!--
+        {% if post.author %}
+        <span class="author_meta">
+          <img src="{{site.baseurl}}/assets/img/{{post.author}}.jpg"></img>
+          <span>David Lin</span>
+        </span>
+        {% endif %}
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    {% endfor %}
+
+    <div class="pagination older-post"><a href="{{ "/archivo" | prepend: site.baseurl }}"><data data-icon="ei-arrow-right"></data> Archivo  </a></div>
   </div>
-  </section>
 </div>
-{% include archive.html %}

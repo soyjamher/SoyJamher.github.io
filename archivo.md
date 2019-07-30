@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sobre mi
-permalink: /blog/
+permalink: /archivo/
 ---
 <div class="posts">
 <h1>Archivo</h1>
