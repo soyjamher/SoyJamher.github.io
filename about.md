@@ -3,7 +3,7 @@ layout: about
 title: Sobre mi
 permalink: /about/
 ---
-<img src="{{ site.baseurl }}/images/jamher.jpeg" />
+<img src="{{ site.baseurl }}/images/Jamher.jpeg" />
 ### Quién soy
 Bienvenido soy Manuel Jamher, soy de Monterrey soy un apasionado de la programación, persistente, fiel creyente de la mejora continua
 
