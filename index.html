@@ -7,7 +7,7 @@ title: Home
         <h3 id="quién-soy">Hola, soy Manuel Jamher</h3>
         <p>llevo algunos años en la industria de TI, Me gusta aprender y perfeccionar mis habilidades, pienso que si todos lo intentamos podemos lograr que la industria del software sea mejor.</p>
 
-        <p>Aquí podras encontrar contenido diverso de cualquier cosa que me llame la atención sobre ciencia de la computación y la ingeniería de software. Todo el codigo podras encontrarlo en GitHub y si te interesa podemos contactarnos por las redes sociales localizados en el pie de pagina.</p>
+        <p>Aquí podras encontrar contenido diverso de cualquier cosa que me llame la atención sobre ingeniería de software y ciencia de la computación. Todo el codigo podras encontrarlo en GitHub y si te interesa podemos contactarnos por las redes sociales localizados en el pie de pagina.</p>
     </div>
 </article>
 <div class="home">
@@ -17,7 +17,19 @@ title: Home
     <article class="post_card post">
       <header class="post_header">
         <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
-        <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+
+        {% assign months = "Enero|Febrero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Noviembre|Diciembre" | split: "|" %}
+        {% assign m = post.date | date: "%-m" | minus: 1 %}
+        {% assign month = months[m] %}
+        {% assign days = "Lunes|Martes|Miercoles|Jueves|Viernes|Sabado|Domingo" | split: "|" %}
+        {% assign d = post.date | date: "%-a" | minus: 1 %}
+        {% assign d_letter = days[a] %}
+        {% assign day = post.date | date: "%d" %}
+        {% assign year = post.date | date: "%Y" %}
+        <span class="date">{{ day }} de {{ month }} del {{ year }}</span>
+
+
+        <!--time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time-->
       </header>
       <div class="post_excerpt">
         <p>
@@ -26,11 +38,14 @@ title: Home
           {% else %}
             {{ post.excerpt }}
           {% endif %} 
-          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
+          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> » Seguir leyendo </a>
         </p> 
       </div>
-      <footer class="post_meta">
-        {% include archive.html %}
+      <hr/>
+    </article>
+    {% endfor %}
+    <footer class="post_meta">
+        {% include footer_tags.html %}
         <!--
         {% if post.location %}
         <span class="author-location">
@@ -58,10 +73,6 @@ title: Home
           <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
         </p-->
       </footer>
-      <hr/>
-    </article>
-    {% endfor %}
-
     <div class="pagination older-post"><a href="{{ "/archivo" | prepend: site.baseurl }}"><data data-icon="ei-arrow-right"></data> Archivo  </a></div>
   </div>
 </div>

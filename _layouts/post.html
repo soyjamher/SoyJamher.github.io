@@ -12,7 +12,29 @@ layout: default
   <header class="artilce_header">
   
     <h1 class="artilce_title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="artilce_meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <p class="artilce_meta">
+      {% assign months = "Enero|Febrero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Noviembre|Diciembre" | split: "|" %}
+      {% assign m = page.date | date: "%-m" | minus: 1 %}
+      {% assign month = months[m] %}
+      {% assign days = "Lunes|Martes|Miercoles|Jueves|Viernes|Sabado|Domingo" | split: "|" %}
+      {% assign d = page.date | date: "%-a" | minus: 1 %}
+      {% assign d_letter = days[a] %}
+      {% assign day = page.date | date: "%d" %}
+      {% assign year = page.date | date: "%Y" %}
+
+      {% if page.author %} 
+          <!--
+      //TODO 00001 hacer referencia al autor del articulo
+    -->
+        Por <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }} - </span></span>
+      {% endif %}
+      <span class="date">{{ day }} de {{ month }} del {{ year }}</span>
+
+
+      <!--time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished"
+
+    {{ page.date | date: "%b %-d, %Y" }}</time>-->
+    </p>
   </header>
   <div class="article-content" itemprop="articleBody"> 
     {{ page.content }}    
@@ -20,5 +42,6 @@ layout: default
   </div>
   <footer class="article-footer">
     {% include author.html %}
+
   </footer>
 </article>
