@@ -23,17 +23,9 @@ layout: default
       {% assign year = page.date | date: "%Y" %}
 
       {% if page.author %} 
-          <!--
-      //TODO 00001 hacer referencia al autor del articulo
-    -->
-        Por <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }} - </span></span>
+      Por <a href="{{ "/about" | prepend: site.baseurl }}"><span itemprop="name">{{ page.author }} - </span></a>
       {% endif %}
-      <span class="date">{{ day }} de {{ month }} del {{ year }}</span>
-
-
-      <!--time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished"
-
-    {{ page.date | date: "%b %-d, %Y" }}</time>-->
+      <span class="post_date" >{{ day }} de {{ month }} del {{ year }}</span>
     </p>
   </header>
   <div class="article-content" itemprop="articleBody"> 
