@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Generador de nombres
-date: 2020-05-10 01:00:00 -0600
+date: 2020-05-03 01:00:00 -0600
 categories: pyhton
 tags: python
 author: Manuel Jamher
@@ -11,4 +11,21 @@ Mas de una vez he requerido tener un set de datos que cuente con RFC y CURP vali
 
 ### Establecer los datos que requerimos
 
-falta redactar
+```python
+// index.js
+Persona NoSuchFieldException 
+dsfdsf dfsfds
+dsfsd
+
+```
+
+asdasdsa
+
+```python
+// index.js
+mas codigo
+
+```
+
+
+<div class="fb-comments" data-href="https://soyjamher.github.io/blog/Generador-de-nombres/" data-numposts="5" data-width=""></div>
